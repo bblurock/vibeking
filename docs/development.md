@@ -61,6 +61,7 @@ If you previously built this checkout before the configuration was added, clear 
 
 ```sh
 cargo clean --manifest-path src-tauri/Cargo.toml -p whisper-rs-sys
+cargo clean --manifest-path src-tauri/Cargo.toml --release -p whisper-rs-sys
 ```
 
 Then repeat the normal tests and build. A fresh clone needs no extra step.
