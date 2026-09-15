@@ -1,0 +1,10 @@
+{
+  "name": "cursor_cursr_to_cursor",
+  "context": "cursor",
+  "expected": "detected",
+  "pasted": "open the file in cursr please",
+  "current_field": "open the file in Cursor please",
+  "original_field": null,
+  "expected_from": "cursr",
+  "expected_to": "Cursor"
+}

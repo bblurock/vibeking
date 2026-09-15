@@ -1,0 +1,26 @@
+name: Bug report
+description: Something did not work as expected.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Include what you expected and the steps to reproduce. Remove private text and credentials.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: App version, macOS version, and Mac chip
+      placeholder: Vibeking 0.1.0, macOS 15, M2
+    validations:
+      required: true
+  - type: input
+    id: engine
+    attributes:
+      label: Recognition engine and refinement provider
+  - type: textarea
+    id: details
+    attributes:
+      label: Additional details
+      description: Optional redacted logs or screenshots. Issues are public.

@@ -1,0 +1,7 @@
+{
+  "name": "linear_ticket",
+  "source_description": "Linear issue body with assignee, project name, and links",
+  "screen_text": "Lead off, here's the ticket. Issue ID is ATLAS-1207. Title says Whisper hallucinates on quiet mic input. Assignee is Morgan Lu and reporter is Ellison. Project is Vibeking. Link is https://linear.app/acme/issue/ATLAS-1207. Description: when the user holds Option but doesn't speak, Whisper returns 'Thank you for watching!' from its YouTube training distribution. We should gate the call on a simple vad threshold from cpal.",
+  "expected_include": ["ATLAS-1207", "Whisper", "Morgan", "Lu", "Ellison", "Vibeking", "Option", "YouTube"],
+  "expected_exclude": ["the", "on", "from"]
+}

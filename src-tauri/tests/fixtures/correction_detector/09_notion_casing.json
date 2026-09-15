@@ -1,0 +1,10 @@
+{
+  "name": "notion_casing",
+  "context": "notion",
+  "expected": "detected",
+  "pasted": "moved the spec into notion yesterday",
+  "current_field": "moved the spec into Notion yesterday",
+  "original_field": null,
+  "expected_from": "notion",
+  "expected_to": "Notion"
+}

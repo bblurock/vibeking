@@ -1,0 +1,7 @@
+{
+  "name": "terminal_session",
+  "source_description": "zsh terminal session with kubectl, docker, gh tool output",
+  "screen_text": "Lead off, here's the terminal log. Ran kubectl get pods in the phoenix namespace and saw phoenix-api-7f8d9 plus phoenix-worker-d3b1f. The worker was CrashLoopBackOff after 42 restarts. Then ran docker logs phoenix-worker-d3b1f and got an error about a refused connection to database.example.com for Postgres. Opened gh pr view 1842 which was titled migrate the worker pool from Sidekiq to Oban, reviewed by Ellison at Anthropic.",
+  "expected_include": ["CrashLoopBackOff", "Sidekiq", "Oban", "Ellison", "Anthropic", "Postgres"],
+  "expected_exclude": ["the", "from", "to"]
+}

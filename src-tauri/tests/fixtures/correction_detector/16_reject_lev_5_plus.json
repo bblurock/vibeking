@@ -1,0 +1,10 @@
+{
+  "name": "reject_lev_5_plus",
+  "context": "slack",
+  "expected": "not_detected",
+  "pasted": "just say hello there",
+  "current_field": "just say goodbye there",
+  "original_field": null,
+  "expected_from": null,
+  "expected_to": null
+}

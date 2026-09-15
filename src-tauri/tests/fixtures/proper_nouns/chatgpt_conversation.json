@@ -1,0 +1,7 @@
+{
+  "name": "chatgpt_conversation",
+  "source_description": "User-assistant exchange about an AI project with technical terms",
+  "screen_text": "Lead off, here's the chat. User wrote: I'm fine-tuning a LoRA on top of Llama3 for legal docs. Should I host inference on vLLM or on a managed service? Assistant replied: for a LoRA over Llama3, vLLM gives you better throughput on a single A100, and it plays nicely with LangGraph for the agentic loop. If you need streaming with Pinecone retrieval, that also works. User wrote back: ok let's start with vLLM. Can you also wire up LangSmith for tracing?",
+  "expected_include": ["LoRA", "Llama3", "vLLM", "A100", "LangGraph", "Pinecone", "LangSmith"],
+  "expected_exclude": ["the", "for", "ok"]
+}

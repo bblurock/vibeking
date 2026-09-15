@@ -1,0 +1,10 @@
+{
+  "name": "reject_token_addition",
+  "context": "notion",
+  "expected": "not_detected",
+  "pasted": "claw is here",
+  "current_field": "the claw is here",
+  "original_field": null,
+  "expected_from": null,
+  "expected_to": null
+}

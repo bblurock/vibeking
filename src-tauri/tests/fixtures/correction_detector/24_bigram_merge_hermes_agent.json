@@ -1,0 +1,10 @@
+{
+  "name": "bigram_merge_hermes_agent",
+  "context": "cursor",
+  "expected": "detected",
+  "pasted": "the hermes agent fires now",
+  "current_field": "the HermesAgent fires now",
+  "original_field": null,
+  "expected_from": "hermes agent",
+  "expected_to": "HermesAgent"
+}

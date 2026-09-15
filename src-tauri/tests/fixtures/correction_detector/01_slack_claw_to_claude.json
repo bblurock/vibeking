@@ -1,0 +1,10 @@
+{
+  "name": "slack_claw_to_claude",
+  "context": "slack",
+  "expected": "detected",
+  "pasted": "Hey can you check the claw docs",
+  "current_field": "Hey can you check the Claude docs",
+  "original_field": null,
+  "expected_from": "claw",
+  "expected_to": "Claude"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "bigram_merge_open_claw",
+  "context": "slack",
+  "expected": "detected",
+  "pasted": "Use open claw for the docs",
+  "current_field": "Use OpenClaw for the docs",
+  "original_field": null,
+  "expected_from": "open claw",
+  "expected_to": "OpenClaw"
+}

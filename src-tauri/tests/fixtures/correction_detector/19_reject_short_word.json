@@ -1,0 +1,10 @@
+{
+  "name": "reject_short_word",
+  "context": "plain_editor",
+  "expected": "not_detected",
+  "pasted": "I want a car now",
+  "current_field": "I want the car now",
+  "original_field": null,
+  "expected_from": null,
+  "expected_to": null
+}

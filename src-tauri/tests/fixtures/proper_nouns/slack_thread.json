@@ -1,0 +1,7 @@
+{
+  "name": "slack_thread",
+  "source_description": "Slack DM thread with cleaned mentions and tool names",
+  "screen_text": "Lead off, here's the thread. From Ellison: did you see the Datadog alert on the Phoenix worker? Reply from Morgan: yeah, looks like a memory leak in the Tokio executor again. From Ellison: ok let's roll back to last week's image and ping Yang for the postmortem. Reply from Morgan: filed a Linear ticket already, ATLAS-441. From Ellison: nice. Also let's swap Sentry breadcrumbs to a json format.",
+  "expected_include": ["Ellison", "Datadog", "Phoenix", "Morgan", "Tokio", "Yang", "Linear", "ATLAS-441", "Sentry"],
+  "expected_exclude": ["the", "on", "yeah", "nice"]
+}

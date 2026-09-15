@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/bblurock/vibeking/blob/main/SECURITY.md
+    about: Please report sensitive security issues privately.

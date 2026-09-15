@@ -1,0 +1,6 @@
+Vibeking — Voice typing for macOS
+Copyright (c) 2026 Benson Lu. MIT licensed.
+
+Includes code adapted from Whispering, Copyright (c) 2023-2026 Braden Wong,
+under its historical MIT license, and a modified MIT fluidaudio-rs library.
+See THIRD_PARTY_NOTICES.md and licenses/ for provenance and license texts.

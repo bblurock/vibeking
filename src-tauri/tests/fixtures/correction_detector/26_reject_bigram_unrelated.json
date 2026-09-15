@@ -1,0 +1,8 @@
+{
+  "name": "reject_bigram_unrelated",
+  "context": "plain",
+  "expected": "not_detected",
+  "pasted": "hello world",
+  "current_field": "goodbye earth",
+  "original_field": null
+}

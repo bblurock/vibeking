@@ -1,0 +1,10 @@
+{
+  "name": "slack_klod_lev4",
+  "context": "slack",
+  "expected": "detected",
+  "pasted": "tried klod for the rewrite task",
+  "current_field": "tried Claude for the rewrite task",
+  "original_field": null,
+  "expected_from": "klod",
+  "expected_to": "Claude"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "mail_anthropic_casing",
+  "context": "mail",
+  "expected": "detected",
+  "pasted": "I think we should reach out to anthropic about pricing",
+  "current_field": "I think we should reach out to Anthropic about pricing",
+  "original_field": null,
+  "expected_from": "anthropic",
+  "expected_to": "Anthropic"
+}

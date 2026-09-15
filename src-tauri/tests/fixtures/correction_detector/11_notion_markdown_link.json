@@ -1,0 +1,10 @@
+{
+  "name": "notion_markdown_link",
+  "context": "notion",
+  "expected": "detected",
+  "pasted": "see [claw](https://example.com) for details",
+  "current_field": "see [Claude](https://example.com) for details",
+  "original_field": null,
+  "expected_from": "claw",
+  "expected_to": "Claude"
+}

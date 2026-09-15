@@ -1,0 +1,7 @@
+{
+  "name": "cursor_file",
+  "source_description": "TypeScript source open in Cursor with imports from named libraries",
+  "screen_text": "Lead off, here's the file. We import Anthropic from the anthropic-ai sdk, we import invoke from tauri-apps, we import useState and useEffect from react, and we import Pinecone from the pinecone-database package. The exported ChipBar component holds a transcript and constructs a new Anthropic client using the ApiKey env. The component returns null while idle.",
+  "expected_include": ["Anthropic", "Pinecone", "ChipBar", "ApiKey"],
+  "expected_exclude": ["the", "from", "import"]
+}

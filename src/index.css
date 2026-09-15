@@ -1,0 +1,682 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/*
+ * Vibeking color system — all neutrals tinted toward the brand hue (268).
+ * Light mode is the original palette, conservative and high-contrast.
+ * Dark mode is a tinted indigo-graphite, not pure grey: cards float on a
+ * deep canvas, hairlines stay visible without harshness, and the accent
+ * lifts slightly so brand-blue reads in both modes.
+ *
+ * Token naming is semantic + numeric. Lower numbers = stronger / darker
+ * (text) or higher elevation (surfaces). Use these everywhere — never
+ * hand-write oklch() in components.
+ */
+:root {
+  /* === shadcn token compatibility (preserved) === */
+  --background: oklch(0.99 0.003 268);
+  --foreground: oklch(0.18 0.01 268);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.01 268);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.01 268);
+  --primary: oklch(0.62 0.18 268);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0.003 268);
+  --secondary-foreground: oklch(0.22 0.01 268);
+  --muted: oklch(0.965 0.005 268);
+  --muted-foreground: oklch(0.52 0.012 268);
+  --accent: oklch(0.96 0.022 268);
+  --accent-foreground: oklch(0.22 0.01 268);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.92 0.005 268);
+  --input: oklch(0.92 0.005 268);
+  --ring: oklch(0.62 0.18 268);
+  --radius: 0.65rem;
+  --sidebar: oklch(0.98 0.005 268);
+  --sidebar-foreground: oklch(0.18 0.01 268);
+  --sidebar-accent: oklch(0.95 0.03 268);
+  --sidebar-accent-foreground: oklch(0.55 0.2 268);
+
+  /* === Semantic tokens used throughout the app === */
+  /* Surfaces */
+  --vk-canvas: oklch(0.99 0.003 268);
+  --vk-canvas-2: oklch(0.985 0.003 268);
+  --vk-canvas-3: oklch(0.985 0.002 268);
+  --vk-surface: oklch(1 0 0);
+  --vk-surface-2: oklch(0.97 0.005 268);
+  --vk-surface-3: oklch(0.96 0.005 268);
+  --vk-sidebar: oklch(0.985 0.005 268);
+
+  /* Borders */
+  --vk-border: oklch(0.92 0.005 268);
+  --vk-border-2: oklch(0.93 0.005 268);
+  --vk-border-3: oklch(0.95 0.005 268);
+  --vk-border-strong: oklch(0.9 0.005 268);
+  --vk-border-strong-2: oklch(0.85 0.005 268);
+  --vk-border-strong-3: oklch(0.88 0.005 268);
+
+  /* Text */
+  --vk-text: oklch(0.16 0.01 268);
+  --vk-text-2: oklch(0.2 0.01 268);
+  --vk-text-3: oklch(0.25 0.01 268);
+  --vk-text-4: oklch(0.3 0.01 268);
+  --vk-text-5: oklch(0.38 0.01 268);
+  --vk-text-6: oklch(0.45 0.01 268);
+  --vk-text-7: oklch(0.5 0.01 268);
+  --vk-text-8: oklch(0.55 0.01 268);
+  --vk-text-9: oklch(0.6 0.01 268);
+  --vk-text-10: oklch(0.65 0.01 268);
+  --vk-text-11: oklch(0.7 0.01 268);
+  --vk-text-12: oklch(0.78 0.01 268);
+  --vk-text-13: oklch(0.85 0.005 268);
+  --vk-text-eyebrow: oklch(0.6 0.02 268);
+
+  /* Misc neutral-ish tinted */
+  --vk-text-alt: oklch(0.55 0.02 268);
+  --vk-text-alt-2: oklch(0.35 0.008 268);
+  --vk-text-soft: oklch(0.82 0.01 268);
+  --vk-text-soft-2: oklch(0.62 0.01 268);
+
+  /* Accent (brand indigo) */
+  --vk-accent: oklch(0.55 0.2 268);
+  --vk-accent-2: oklch(0.55 0.18 268);
+  --vk-accent-3: oklch(0.5 0.2 268);
+  --vk-accent-4: oklch(0.62 0.18 268);
+  --vk-accent-5: oklch(0.56 0.18 268);
+  --vk-accent-6: oklch(0.45 0.18 268);
+  --vk-accent-7: oklch(0.4 0.18 268);
+  --vk-accent-8: oklch(0.7 0.18 268);
+  --vk-accent-9: oklch(0.7 0.16 268);
+  --vk-accent-soft-bg: oklch(0.95 0.03 268);
+  --vk-accent-soft-bg-2: oklch(0.95 0.02 268);
+  --vk-accent-soft-bg-3: oklch(0.97 0.04 268);
+  --vk-accent-soft-bg-4: oklch(0.95 0.04 268);
+  --vk-accent-soft-bg-5: oklch(0.95 0.01 268);
+  --vk-accent-pop: oklch(0.55 0.18 296);
+  --vk-accent-pop-2: oklch(0.55 0.18 278);
+
+  /* Status: success (green ~152) */
+  --vk-success: oklch(0.55 0.18 152);
+  --vk-success-2: oklch(0.45 0.16 152);
+  --vk-success-3: oklch(0.5 0.16 152);
+  --vk-success-4: oklch(0.4 0.16 152);
+  --vk-success-soft-bg: oklch(0.95 0.04 152);
+  --vk-success-dot: oklch(0.72 0.16 152);
+  --vk-success-ring: oklch(0.72 0.16 152 / 0.16);
+
+  /* Status: danger (red ~25) */
+  --vk-danger: oklch(0.55 0.22 25);
+  --vk-danger-2: oklch(0.6 0.22 25);
+  --vk-danger-3: oklch(0.65 0.22 25);
+  --vk-danger-4: oklch(0.55 0.18 25);
+  --vk-danger-5: oklch(0.4 0.18 25);
+  --vk-danger-6: oklch(0.45 0.2 25);
+  --vk-danger-7: oklch(0.45 0.16 25);
+  --vk-danger-8: oklch(0.45 0.15 30);
+  --vk-danger-soft-bg: oklch(0.95 0.02 25);
+  --vk-danger-soft-bg-2: oklch(0.95 0.03 25);
+  --vk-danger-soft-bg-3: oklch(0.97 0.03 25);
+  --vk-danger-soft-bg-4: oklch(0.98 0.01 25);
+  --vk-danger-soft-bg-5: oklch(0.95 0.04 30);
+  --vk-danger-border: oklch(0.85 0.05 25);
+  --vk-danger-border-2: oklch(0.85 0.06 25);
+  --vk-danger-border-3: oklch(0.85 0.08 25);
+  --vk-danger-border-4: oklch(0.85 0.1 25);
+  --vk-danger-ring: oklch(0.65 0.22 25 / 0.18);
+
+  /* Status: warning / orange-yellow (~55, ~85) */
+  --vk-warning: oklch(0.7 0.15 55);
+  --vk-warning-dot: oklch(0.75 0.16 85);
+  --vk-warning-ring: oklch(0.75 0.16 85 / 0.18);
+
+  /* Info (~240, ~296) */
+  --vk-info-soft-bg: oklch(0.95 0.04 240);
+  --vk-info-fg: oklch(0.4 0.15 240);
+  --vk-info-fg-2: oklch(0.5 0.18 240);
+  --vk-info-fg-3: oklch(0.5 0.12 240);
+  --vk-purple: oklch(0.55 0.2 296);
+  --vk-purple-2: oklch(0.5 0.18 296);
+  --vk-purple-3: oklch(0.5 0.14 296);
+  --vk-purple-4: oklch(0.5 0.12 296);
+  --vk-purple-soft-bg: oklch(0.95 0.04 296);
+
+  /* Shadow rgba-like neutrals (kept dark in both modes — shadows are real) */
+  --vk-shadow-03: oklch(0 0 0 / 0.03);
+  --vk-shadow-04: oklch(0 0 0 / 0.04);
+  --vk-shadow-05: oklch(0 0 0 / 0.05);
+  --vk-shadow-06: oklch(0 0 0 / 0.06);
+  --vk-shadow-08: oklch(0 0 0 / 0.08);
+  --vk-shadow-10: oklch(0 0 0 / 0.10);
+  --vk-shadow-12: oklch(0 0 0 / 0.12);
+  --vk-shadow-15: oklch(0 0 0 / 0.15);
+
+  /* Brand chip inner highlight */
+  --vk-chip-highlight: oklch(1 0 0 / 0.2);
+  --vk-chip-overlay: oklch(1 0 0 / 0.6);
+
+  /* ChipBar window glass */
+  --vk-chip-surface: oklch(1 0 0 / 0.95);
+  --vk-chip-glass-bg: oklch(1 0 0 / 0.6);
+  --vk-chip-glass-bg-2: oklch(1 0 0 / 0.2);
+  --vk-chip-glass-shadow: oklch(0.55 0.18 268 / 0.25);
+  --vk-chip-glass-shadow-2: oklch(0.5 0.18 268 / 0.3);
+  --vk-chip-glass-shadow-3: oklch(0.62 0.18 268 / 0.18);
+  --vk-chip-glass-shadow-4: oklch(0.62 0.18 268 / 0.15);
+  --vk-chip-overlay-1: oklch(0.16 0.02 268 / 0.12);
+  --vk-chip-overlay-2: oklch(0.16 0.02 268 / 0.35);
+  --vk-chip-overlay-3: oklch(0.18 0.02 268 / 0.55);
+
+  /* Idle-bar glass — a frosted, lightly-iridescent floating surface that
+     picks up whatever is on screen behind it (true vibrancy, like a native
+     macOS HUD). Tuned subtle so it never competes with the user's content. */
+  --vk-glass-base: oklch(1 0.002 268 / 0.92);
+  --vk-glass-sheen-1: oklch(0.72 0.17 264 / 0.14);
+  --vk-glass-sheen-2: oklch(0.74 0.16 330 / 0.11);
+  --vk-glass-border: oklch(1 0 0 / 0.75);
+  --vk-glass-top: oklch(1 0 0 / 0.95);
+  --vk-glass-inner: oklch(1 0 0 / 0.3);
+  --vk-glass-shadow: oklch(0.45 0.06 268 / 0.3);
+  --vk-glass-shadow-2: oklch(0 0 0 / 0.1);
+  --vk-glass-ink: oklch(0.26 0.02 268);
+  --vk-glass-ink-2: oklch(0.42 0.02 268);
+  --vk-glass-chip: oklch(1 0 0 / 0.5);
+  --vk-glass-chip-border: oklch(1 0 0 / 0.6);
+  --vk-glass-divider: oklch(0.4 0.02 268 / 0.18);
+  --vk-glass-mic-1: oklch(0.62 0.2 266);
+  --vk-glass-mic-2: oklch(0.55 0.21 286);
+  /* Recording-state tint for the morphing bar — the SAME glass as idle with
+     just a hint of lavender, so they read as one surface that shifts rather
+     than two different bars. */
+  --vk-glass-base-rec: oklch(0.89 0.03 288 / 0.92);
+  /* Mode-picker menu surface — near-opaque (no backdrop-filter) so rapid
+     per-row hover repaints stay snappy in WKWebView. */
+  --vk-menu-bg: oklch(0.99 0.004 268 / 0.98);
+  --vk-menu-hover: oklch(0.93 0.012 268);
+
+  /* Scrollbar thumb */
+  --vk-scrollbar-thumb: oklch(0.5 0.01 268 / 0.3);
+}
+
+.dark {
+  /* === shadcn token compatibility — retinted toward 268 === */
+  --background: oklch(0.165 0.012 268);
+  --foreground: oklch(0.96 0.005 268);
+  --card: oklch(0.215 0.014 268);
+  --card-foreground: oklch(0.96 0.005 268);
+  --popover: oklch(0.235 0.015 268);
+  --popover-foreground: oklch(0.96 0.005 268);
+  --primary: oklch(0.78 0.16 268);
+  --primary-foreground: oklch(0.165 0.012 268);
+  --secondary: oklch(0.26 0.018 268);
+  --secondary-foreground: oklch(0.96 0.005 268);
+  --muted: oklch(0.25 0.016 268);
+  --muted-foreground: oklch(0.7 0.013 268);
+  --accent: oklch(0.3 0.05 268);
+  --accent-foreground: oklch(0.96 0.005 268);
+  --destructive: oklch(0.7 0.19 25);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.3 0.018 268);
+  --input: oklch(0.3 0.018 268);
+  --ring: oklch(0.78 0.16 268);
+  --sidebar: oklch(0.145 0.012 268);
+  --sidebar-foreground: oklch(0.96 0.005 268);
+  --sidebar-accent: oklch(0.32 0.06 268);
+  --sidebar-accent-foreground: oklch(0.82 0.16 268);
+
+  /* === Surfaces — inverted ladder, brand-tinted graphite === */
+  --vk-canvas: oklch(0.165 0.012 268);
+  --vk-canvas-2: oklch(0.175 0.012 268);
+  --vk-canvas-3: oklch(0.19 0.013 268);
+  --vk-surface: oklch(0.215 0.014 268);
+  --vk-surface-2: oklch(0.25 0.016 268);
+  --vk-surface-3: oklch(0.27 0.017 268);
+  --vk-sidebar: oklch(0.145 0.012 268);
+
+  /* === Borders — visible without harshness === */
+  --vk-border: oklch(0.3 0.018 268);
+  --vk-border-2: oklch(0.28 0.018 268);
+  --vk-border-3: oklch(0.255 0.016 268);
+  --vk-border-strong: oklch(0.36 0.022 268);
+  --vk-border-strong-2: oklch(0.42 0.026 268);
+  --vk-border-strong-3: oklch(0.34 0.02 268);
+
+  /* === Text — inverted ladder === */
+  --vk-text: oklch(0.97 0.005 268);
+  --vk-text-2: oklch(0.94 0.007 268);
+  --vk-text-3: oklch(0.9 0.009 268);
+  --vk-text-4: oklch(0.86 0.01 268);
+  --vk-text-5: oklch(0.82 0.011 268);
+  --vk-text-6: oklch(0.78 0.012 268);
+  --vk-text-7: oklch(0.74 0.012 268);
+  --vk-text-8: oklch(0.68 0.013 268);
+  --vk-text-9: oklch(0.62 0.013 268);
+  --vk-text-10: oklch(0.56 0.013 268);
+  --vk-text-11: oklch(0.5 0.014 268);
+  --vk-text-12: oklch(0.42 0.014 268);
+  --vk-text-13: oklch(0.35 0.014 268);
+  --vk-text-eyebrow: oklch(0.62 0.025 268);
+
+  --vk-text-alt: oklch(0.7 0.018 268);
+  --vk-text-alt-2: oklch(0.78 0.012 268);
+  --vk-text-soft: oklch(0.4 0.014 268);
+  --vk-text-soft-2: oklch(0.62 0.014 268);
+
+  /* === Accent — brand indigo, lifted for dark backgrounds === */
+  --vk-accent: oklch(0.82 0.16 268);
+  --vk-accent-2: oklch(0.78 0.16 268);
+  --vk-accent-3: oklch(0.8 0.17 268);
+  --vk-accent-4: oklch(0.74 0.17 268);
+  --vk-accent-5: oklch(0.76 0.17 268);
+  --vk-accent-6: oklch(0.72 0.17 268);
+  --vk-accent-7: oklch(0.68 0.17 268);
+  --vk-accent-8: oklch(0.82 0.15 268);
+  --vk-accent-9: oklch(0.82 0.14 268);
+  --vk-accent-soft-bg: oklch(0.32 0.06 268);
+  --vk-accent-soft-bg-2: oklch(0.3 0.05 268);
+  --vk-accent-soft-bg-3: oklch(0.35 0.07 268);
+  --vk-accent-soft-bg-4: oklch(0.34 0.07 268);
+  --vk-accent-soft-bg-5: oklch(0.28 0.04 268);
+  --vk-accent-pop: oklch(0.78 0.16 296);
+  --vk-accent-pop-2: oklch(0.78 0.16 278);
+
+  /* === Status: success === */
+  --vk-success: oklch(0.78 0.17 152);
+  --vk-success-2: oklch(0.78 0.16 152);
+  --vk-success-3: oklch(0.78 0.16 152);
+  --vk-success-4: oklch(0.74 0.16 152);
+  --vk-success-soft-bg: oklch(0.3 0.08 152);
+  --vk-success-dot: oklch(0.78 0.17 152);
+  --vk-success-ring: oklch(0.78 0.17 152 / 0.22);
+
+  /* === Status: danger === */
+  --vk-danger: oklch(0.75 0.19 25);
+  --vk-danger-2: oklch(0.72 0.19 25);
+  --vk-danger-3: oklch(0.72 0.19 25);
+  --vk-danger-4: oklch(0.78 0.18 25);
+  --vk-danger-5: oklch(0.78 0.17 25);
+  --vk-danger-6: oklch(0.78 0.18 25);
+  --vk-danger-7: oklch(0.78 0.17 25);
+  --vk-danger-8: oklch(0.78 0.16 30);
+  --vk-danger-soft-bg: oklch(0.3 0.08 25);
+  --vk-danger-soft-bg-2: oklch(0.32 0.09 25);
+  --vk-danger-soft-bg-3: oklch(0.28 0.07 25);
+  --vk-danger-soft-bg-4: oklch(0.26 0.05 25);
+  --vk-danger-soft-bg-5: oklch(0.3 0.08 30);
+  --vk-danger-border: oklch(0.42 0.13 25);
+  --vk-danger-border-2: oklch(0.44 0.14 25);
+  --vk-danger-border-3: oklch(0.46 0.15 25);
+  --vk-danger-border-4: oklch(0.48 0.16 25);
+  --vk-danger-ring: oklch(0.72 0.19 25 / 0.25);
+
+  /* === Status: warning === */
+  --vk-warning: oklch(0.82 0.15 55);
+  --vk-warning-dot: oklch(0.82 0.16 85);
+  --vk-warning-ring: oklch(0.82 0.16 85 / 0.22);
+
+  /* === Info / Purple === */
+  --vk-info-soft-bg: oklch(0.3 0.08 240);
+  --vk-info-fg: oklch(0.82 0.14 240);
+  --vk-info-fg-2: oklch(0.82 0.16 240);
+  --vk-info-fg-3: oklch(0.82 0.13 240);
+  --vk-purple: oklch(0.82 0.17 296);
+  --vk-purple-2: oklch(0.78 0.17 296);
+  --vk-purple-3: oklch(0.78 0.15 296);
+  --vk-purple-4: oklch(0.78 0.13 296);
+  --vk-purple-soft-bg: oklch(0.3 0.08 296);
+
+  /* Shadows — deeper in dark mode to read against tinted surfaces */
+  --vk-shadow-03: oklch(0 0 0 / 0.3);
+  --vk-shadow-04: oklch(0 0 0 / 0.35);
+  --vk-shadow-05: oklch(0 0 0 / 0.4);
+  --vk-shadow-06: oklch(0 0 0 / 0.45);
+  --vk-shadow-08: oklch(0 0 0 / 0.5);
+  --vk-shadow-10: oklch(0 0 0 / 0.55);
+  --vk-shadow-12: oklch(0 0 0 / 0.6);
+  --vk-shadow-15: oklch(0 0 0 / 0.7);
+
+  /* Brand chip inner highlight (kept white-ish — it's a chip glow) */
+  --vk-chip-highlight: oklch(1 0 0 / 0.18);
+  --vk-chip-overlay: oklch(1 0 0 / 0.5);
+
+  /* ChipBar window glass — dark-tinted */
+  --vk-chip-surface: oklch(0.205 0.014 268 / 0.92);
+  --vk-chip-glass-bg: oklch(0.22 0.015 268 / 0.72);
+  --vk-chip-glass-bg-2: oklch(1 0 0 / 0.06);
+  --vk-chip-glass-shadow: oklch(0 0 0 / 0.5);
+  --vk-chip-glass-shadow-2: oklch(0 0 0 / 0.6);
+  --vk-chip-glass-shadow-3: oklch(0.78 0.16 268 / 0.25);
+  --vk-chip-glass-shadow-4: oklch(0.78 0.16 268 / 0.2);
+  --vk-chip-overlay-1: oklch(0.96 0.005 268 / 0.08);
+  --vk-chip-overlay-2: oklch(0.96 0.005 268 / 0.18);
+  --vk-chip-overlay-3: oklch(0.96 0.005 268 / 0.28);
+
+  /* Idle-bar glass — dark-tinted vibrancy */
+  --vk-glass-base: oklch(0.25 0.016 268 / 0.9);
+  --vk-glass-sheen-1: oklch(0.62 0.18 264 / 0.22);
+  --vk-glass-sheen-2: oklch(0.6 0.18 330 / 0.16);
+  --vk-glass-border: oklch(1 0 0 / 0.2);
+  --vk-glass-top: oklch(1 0 0 / 0.24);
+  --vk-glass-inner: oklch(1 0 0 / 0.06);
+  --vk-glass-shadow: oklch(0 0 0 / 0.5);
+  --vk-glass-shadow-2: oklch(0 0 0 / 0.35);
+  --vk-glass-ink: oklch(0.95 0.01 268);
+  --vk-glass-ink-2: oklch(0.72 0.02 268);
+  --vk-glass-chip: oklch(1 0 0 / 0.1);
+  --vk-glass-chip-border: oklch(1 0 0 / 0.14);
+  --vk-glass-divider: oklch(1 0 0 / 0.16);
+  --vk-glass-mic-1: oklch(0.7 0.18 266);
+  --vk-glass-mic-2: oklch(0.64 0.19 286);
+  --vk-glass-base-rec: oklch(0.29 0.035 288 / 0.92);
+  --vk-menu-bg: oklch(0.2 0.014 268 / 0.98);
+  --vk-menu-hover: oklch(0.3 0.018 268);
+
+  /* Scrollbar thumb */
+  --vk-scrollbar-thumb: oklch(0.7 0.012 268 / 0.3);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
+      "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Chip bar window: transparent root */
+html.chipbar,
+html.chipbar body,
+html.chipbar #root {
+  background: transparent !important;
+}
+
+@keyframes vibeking-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+.animate-vibeking-pulse {
+  animation: vibeking-pulse 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes vibeking-fade-up {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-vibeking-fade-up {
+  animation: vibeking-fade-up 240ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Idle-bar glass surface. Frosted vibrancy + a faint dual-hue sheen + a
+   light-catching rim (top highlight inset). The blur samples the desktop
+   behind the transparent chip window, so the bar takes on the colour of
+   whatever the user is looking at — the macOS HUD feel. */
+.vk-glass-bar {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--vk-glass-base);
+  background-image:
+    radial-gradient(150% 220% at 0% 0%, var(--vk-glass-sheen-1), transparent 55%),
+    radial-gradient(150% 220% at 100% 130%, var(--vk-glass-sheen-2), transparent 55%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  backdrop-filter: blur(30px) saturate(180%);
+  border: 1px solid var(--vk-glass-border);
+  /* Shadow MUST stay inside the window's transparent gutter (the chip sits
+     18px above the window's bottom edge — see pb-[18px] in ChipBar — with
+     ~16px on the sides). A shadow that reaches further is clipped by the
+     window bounds, leaving a hard crop line. Extents below: down 4+18-8=14px,
+     up -4+18-8=6px, sides 18-8=10px — all within the gutter. */
+  box-shadow:
+    0 4px 18px -8px var(--vk-glass-shadow),
+    0 2px 6px -2px var(--vk-glass-shadow-2),
+    inset 0 1px 0 0 var(--vk-glass-top),
+    inset 0 0 0 0.5px var(--vk-glass-inner);
+}
+/* Inset glassy control inside the bar — used for the INTERACTIVE mode chip
+   (looks pressable). */
+.vk-glass-control {
+  background: var(--vk-glass-chip);
+  border: 1px solid var(--vk-glass-chip-border);
+  box-shadow: inset 0 1px 0 var(--vk-glass-top);
+}
+/* Quiet hotkey keycap — informational, NOT a control. Flat with only a
+   hairline, muted ink, so it reads clearly differently from the pressable
+   mode chip next to it. */
+.vk-glass-keycap {
+  background: transparent;
+  border: 1px solid var(--vk-glass-divider);
+  box-shadow: none;
+  color: var(--vk-glass-ink-2);
+}
+/* Mode-picker menu — opaque surface, no backdrop-filter (see --vk-menu-bg). */
+.vk-menu-surface {
+  background: var(--vk-menu-bg);
+  border: 1px solid var(--vk-glass-border);
+  box-shadow:
+    0 16px 40px -8px var(--vk-glass-shadow),
+    inset 0 1px 0 var(--vk-glass-top);
+}
+.vk-glass-divider {
+  width: 1px;
+  align-self: center;
+  border-radius: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--vk-glass-divider),
+    transparent
+  );
+}
+.vk-glass-mic {
+  background: linear-gradient(160deg, var(--vk-glass-mic-1), var(--vk-glass-mic-2));
+  box-shadow:
+    0 4px 12px -2px var(--vk-glass-mic-2),
+    inset 0 1px 0 oklch(1 0 0 / 0.3);
+}
+
+/* Morphing bar shell — ONE persistent element that animates its own width,
+   height, corner radius and tint while the child content crossfades, so the
+   idle bar visually morphs into the recording bar (and back) rather than one
+   vanishing and the other popping in. Width/height come from a measured ref
+   (see MorphShell); overflow-hidden clips the content cleanly mid-morph. */
+.morph-shell {
+  position: relative;
+  overflow: hidden;
+  /* Background tint always eases (cheap, never clips). The SIZE (width / height
+     / radius) only animates during a variant change — the idle↔recording morph
+     — gated by [data-animate]. While the live transcript streams in, the shell
+     height is driven by a ResizeObserver measuring the growing content; a
+     transition there would lag 300ms behind every update and `overflow:hidden`
+     would clip the card's bottom the whole time (the "cropped halfway" bug).
+     With no size transition, the measured height tracks the content instantly. */
+  transition: background-color 320ms ease;
+}
+.morph-shell[data-animate="true"] {
+  transition:
+    width 300ms cubic-bezier(0.22, 1, 0.32, 1),
+    height 300ms cubic-bezier(0.22, 1, 0.32, 1),
+    border-radius 300ms ease,
+    background-color 320ms ease;
+}
+/* Horizontally centred (symmetric width morph) but anchored to the shell's
+   BOTTOM, not its centre. The compact-pill → live-transcript-card growth is a
+   3-step async cascade with no shared clock: React paints the tall content
+   first, a ResizeObserver grows the shell a frame later, and `chipbar_grow`
+   resizes the native window tens of ms after that. If the content were
+   vertically centred, it would balloon symmetrically out of the still-short
+   shell and then visibly SHIFT UP as the shell/window heights catch up — the
+   flicker where the card jumps ~hundreds of px above then settles. Bottom-
+   anchoring (the shell itself is bottom-pinned in the `items-end` grid) means
+   the content can only ever reveal UPWARD from a fixed bottom line, so whichever
+   async step lands first the bar's bottom edge never moves.
+   `width: max-content` is critical: without it the absolute element's
+   shrink-to-fit width is capped by the shell (its containing block), so the
+   previous measure feeds back and shrinkable children collapse — the idle X
+   clips off and the recording label wraps to two lines. max-content makes the
+   content always lay out at its true single-line width, which we then measure. */
+.morph-content {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: max-content;
+  animation: morph-content-in 240ms ease both;
+}
+@keyframes morph-content-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.morph-shell[data-variant="recording"] {
+  background-color: var(--vk-glass-base-rec);
+}
+
+/* Chip entrance — a soft spring (scale + lift + fade), the way native macOS
+   HUDs (Spotlight, the volume overlay) settle into place rather than sliding
+   flatly. The overshoot in the easing curve gives it a touch of physicality. */
+@keyframes vibeking-chip-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-vibeking-chip-in {
+  animation: vibeking-chip-in 360ms cubic-bezier(0.22, 1.12, 0.32, 1) both;
+  /* Keep the spring crisp — anchor the scale at the bottom so the chip grows
+     up out of its resting line instead of from its centre. */
+  transform-origin: center bottom;
+  will-change: transform, opacity;
+}
+
+/* Live-transcript card unfolding out of the compact recording pill. A gentle
+   vertical expand so the body "grows" into existence instead of popping. */
+@keyframes vibeking-unfold {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-vibeking-unfold {
+  animation: vibeking-unfold 300ms cubic-bezier(0.22, 1, 0.32, 1) both;
+  transform-origin: center bottom;
+}
+
+/* Apple-Intelligence-style shimmer for the "Vibing" (polish/translate) phase.
+   A coloured highlight band sweeps across the in-flight text while the model
+   rewrites it — the universal "thinking about your words" cue. WKWebView (what
+   Tauri ships on macOS) needs the -webkit- clip + fill-color pair. */
+@keyframes vibeking-shimmer {
+  from { background-position: 180% 0; }
+  to   { background-position: -180% 0; }
+}
+
+.vibeking-shimmer-text {
+  background: linear-gradient(
+    100deg,
+    var(--vk-text-3) 35%,
+    var(--vk-purple) 50%,
+    var(--vk-text-3) 65%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: vibeking-shimmer 1.5s linear infinite;
+}
+
+/* Soft breathing halo around the status icon while the app is actively
+   working (recognizing / polishing / translating). Reads as a quiet pulse,
+   not a spinner — calmer and more native than a hard loading indicator. */
+@keyframes vibeking-halo {
+  0%   { box-shadow: 0 0 0 0 var(--vk-halo, transparent); }
+  70%  { box-shadow: 0 0 0 6px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+.animate-vibeking-halo {
+  animation: vibeking-halo 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Accessibility: honour the system "Reduce motion" setting. The sledgehammer
+   form (near-zero durations) also neutralises the inline-style animations
+   (equalizer, word-reveal, cursor blink) that class selectors can't reach. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .vibeking-shimmer-text {
+    background: none;
+    -webkit-text-fill-color: var(--vk-text-3);
+    color: var(--vk-text-3);
+  }
+}
+
+/* Native macOS scrollbar feel */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(0 0 0 / 0);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+  transition: background 200ms;
+}
+*:hover::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vk-scrollbar-thumb);
+  background-clip: content-box;
+}

@@ -1,0 +1,57 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Rust / Tauri
+src-tauri/target/
+src-tauri/gen/schemas/
+src-tauri/.cargo/
+**/*.rs.bk
+
+# macOS
+.DS_Store
+
+# Claude Code agent runtime state
+.claude/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python bytecode (spikes)
+__pycache__/
+*.pyc
+
+# Local release, Swift, and agent files
+.build/
+.swiftpm/
+.agents/
+.codex/
+.env*
+!.env.example
+*.dmg
+*.app/

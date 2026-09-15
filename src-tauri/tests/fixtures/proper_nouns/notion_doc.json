@@ -1,0 +1,7 @@
+{
+  "name": "notion_doc",
+  "source_description": "Notion-style design doc with project names and tool mentions",
+  "screen_text": "Lead off. We're scoping Project Atlas for the Q2 roadmap. Owner is Mira Chen with Ellison and Yang as reviewers. The plan: migrate Postgres to Neon, replace Algolia with Typesense, ship Stripe metered billing for Workspace Pro, and land OAuth via Clerk. Open question: do we keep Redis or switch to Upstash for the worker queue?",
+  "expected_include": ["Atlas", "Mira", "Chen", "Ellison", "Yang", "Postgres", "Neon", "Algolia", "Typesense", "Stripe", "Clerk", "Redis", "Upstash"],
+  "expected_exclude": ["the", "to", "scoping", "question"]
+}

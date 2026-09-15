@@ -1,0 +1,8 @@
+{
+  "name": "reject_three_token_diff",
+  "context": "plain",
+  "expected": "not_detected",
+  "pasted": "the quick brown fox jumps",
+  "current_field": "a slow lazy fox jumps",
+  "original_field": null
+}

@@ -1,0 +1,10 @@
+{
+  "name": "slack_end_of_sentence",
+  "context": "slack",
+  "expected": "detected",
+  "pasted": "all the discussion was about claw.",
+  "current_field": "all the discussion was about Claude.",
+  "original_field": null,
+  "expected_from": "claw",
+  "expected_to": "Claude"
+}

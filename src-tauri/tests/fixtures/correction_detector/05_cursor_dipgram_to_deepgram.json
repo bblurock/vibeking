@@ -1,0 +1,10 @@
+{
+  "name": "cursor_dipgram_to_deepgram",
+  "context": "cursor",
+  "expected": "detected",
+  "pasted": "fix dipgram streaming reconnect bug",
+  "current_field": "fix Deepgram streaming reconnect bug",
+  "original_field": null,
+  "expected_from": "dipgram",
+  "expected_to": "Deepgram"
+}

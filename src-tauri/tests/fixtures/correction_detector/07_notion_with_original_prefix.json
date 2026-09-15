@@ -1,0 +1,10 @@
+{
+  "name": "notion_with_original_prefix",
+  "context": "notion",
+  "expected": "detected",
+  "pasted": "re check the claw response",
+  "current_field": "Project notes\nre check the Claude response",
+  "original_field": "Project notes\n",
+  "expected_from": "claw",
+  "expected_to": "Claude"
+}

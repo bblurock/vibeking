@@ -1,0 +1,7 @@
+{
+  "name": "github_pr",
+  "source_description": "GitHub PR description with reviewer names and library mentions",
+  "screen_text": "Lead off. PR title: Swap Algolia for Typesense in search-service. Author is Morgan Lu. Reviewers are Mira Chen and Ellison. Labels include search, perf, and priority. Summary: this PR replaces the Algolia client in apps/search-service with Typesense. Cuts p95 latency from 380ms to 90ms on the Phoenix benchmark. Also drops the dependency on Faker for test seeding — switched to msw handlers.",
+  "expected_include": ["Algolia", "Typesense", "Morgan", "Lu", "Mira", "Chen", "Ellison", "Phoenix", "Faker", "p95", "380ms"],
+  "expected_exclude": ["the", "from", "priority"]
+}

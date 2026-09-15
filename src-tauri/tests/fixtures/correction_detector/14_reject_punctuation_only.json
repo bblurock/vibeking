@@ -1,0 +1,10 @@
+{
+  "name": "reject_punctuation_only",
+  "context": "slack",
+  "expected": "not_detected",
+  "pasted": "hello, world",
+  "current_field": "hello world",
+  "original_field": null,
+  "expected_from": null,
+  "expected_to": null
+}

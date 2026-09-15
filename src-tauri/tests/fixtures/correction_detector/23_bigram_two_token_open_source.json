@@ -1,0 +1,10 @@
+{
+  "name": "bigram_two_token_open_source",
+  "context": "mail",
+  "expected": "detected",
+  "pasted": "It is Open Source software",
+  "current_field": "It is open-source software",
+  "original_field": null,
+  "expected_from": "Open Source",
+  "expected_to": "open-source"
+}

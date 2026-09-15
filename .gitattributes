@@ -1,0 +1,5 @@
+# Preserve upstream license text without surfacing its formatting as source errors.
+licenses/** -whitespace linguist-generated=true
+vendor/** linguist-vendored=true
+*.png binary
+*.wav binary

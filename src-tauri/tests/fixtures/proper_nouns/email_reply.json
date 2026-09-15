@@ -1,0 +1,7 @@
+{
+  "name": "email_reply",
+  "source_description": "Realistic Mail.app reply context with named people and a project name",
+  "screen_text": "Lead off. From: Katherine Yang <katherine@example.com>, To: Morgan Lu, Subject: Re: Kubernetes rollout for Phoenix. Hi Morgan, quick update on the Phoenix rollout: Ellison signed off on the architecture review this morning. We are cleared to ship to Datadog next Tuesday. Ping me on Slack if anything blocks. Thanks, Katherine.",
+  "expected_include": ["Katherine", "Yang", "Morgan", "Lu", "Kubernetes", "Phoenix", "Ellison", "Datadog", "Tuesday", "Slack"],
+  "expected_exclude": ["the", "on", "Hi", "quick"]
+}

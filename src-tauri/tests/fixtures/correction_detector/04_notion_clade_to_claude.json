@@ -1,0 +1,10 @@
+{
+  "name": "notion_clade_to_claude",
+  "context": "notion",
+  "expected": "detected",
+  "pasted": "Use clade for the summarization step",
+  "current_field": "Use Claude for the summarization step",
+  "original_field": null,
+  "expected_from": "clade",
+  "expected_to": "Claude"
+}

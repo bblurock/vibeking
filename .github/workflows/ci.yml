@@ -1,0 +1,33 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: macos-15
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22'
+      - name: Install pinned pnpm
+        run: npm install --global pnpm@10.20.0
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Fetch pinned sidecar
+        run: bash scripts/fetch-uv.sh
+      - name: Build frontend
+        run: pnpm build
+      - name: Select stable Rust
+        run: rustup default stable
+      - name: Test native code
+        run: cargo test --manifest-path src-tauri/Cargo.toml --locked --lib --tests
+      - name: Build desktop application
+        run: pnpm tauri build --bundles app

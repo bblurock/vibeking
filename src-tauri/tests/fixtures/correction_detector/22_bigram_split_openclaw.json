@@ -1,0 +1,10 @@
+{
+  "name": "bigram_split_openclaw",
+  "context": "notion",
+  "expected": "detected",
+  "pasted": "Use OpenClaw for the docs",
+  "current_field": "Use open claw for the docs",
+  "original_field": null,
+  "expected_from": "OpenClaw",
+  "expected_to": "open claw"
+}

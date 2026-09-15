@@ -1,0 +1,10 @@
+{
+  "name": "reject_two_word_change",
+  "context": "plain_editor",
+  "expected": "not_detected",
+  "pasted": "hello world friends",
+  "current_field": "goodbye earth friends",
+  "original_field": null,
+  "expected_from": null,
+  "expected_to": null
+}

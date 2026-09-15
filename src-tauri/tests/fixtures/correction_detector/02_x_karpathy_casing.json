@@ -1,0 +1,10 @@
+{
+  "name": "x_karpathy_casing",
+  "context": "x",
+  "expected": "detected",
+  "pasted": "watching karpathy explain backprop again",
+  "current_field": "watching Karpathy explain backprop again",
+  "original_field": null,
+  "expected_from": "karpathy",
+  "expected_to": "Karpathy"
+}

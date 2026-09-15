@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>Vibeking needs microphone access to transcribe your voice into text.</string>
+
+  <key>NSInputMonitoringUsageDescription</key>
+  <string>Vibeking needs Input Monitoring access to detect the global hotkey (Right Control) while you work in other apps.</string>
+
+  <key>NSAppleEventsUsageDescription</key>
+  <string>Vibeking uses system events to paste transcribed text into the focused application.</string>
+
+  <key>NSScreenCaptureUsageDescription</key>
+  <string>Vibeking uses on-device OCR to read the words on your screen so it can spell proper nouns correctly. Screen content never leaves your Mac.</string>
+
+  <key>LSUIElement</key>
+  <false/>
+</dict>
+</plist>

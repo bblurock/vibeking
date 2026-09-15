@@ -1,0 +1,10 @@
+{
+  "name": "reject_numeric_only",
+  "context": "cursor",
+  "expected": "not_detected",
+  "pasted": "bump version 123 today",
+  "current_field": "bump version 456 today",
+  "original_field": null,
+  "expected_from": null,
+  "expected_to": null
+}

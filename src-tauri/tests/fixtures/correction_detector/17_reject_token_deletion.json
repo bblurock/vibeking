@@ -1,0 +1,10 @@
+{
+  "name": "reject_token_deletion",
+  "context": "notion",
+  "expected": "not_detected",
+  "pasted": "the claw model is large",
+  "current_field": "claw model is large",
+  "original_field": null,
+  "expected_from": null,
+  "expected_to": null
+}
