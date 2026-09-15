@@ -1,6 +1,6 @@
 # Privacy
 
-This describes the source and public build of Vibeking 0.1.0.
+This describes the source and public build of Vibeking 0.1.1.
 
 ## Processing and network access
 

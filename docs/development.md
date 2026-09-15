@@ -52,3 +52,15 @@ bash scripts/build-release.sh
 The script requires a Developer ID identity and Apple notarization credentials. It reads the environment only; it does not source local credential files or private service configuration. Do not commit certificates, passwords, API keys, personal recordings, or app data. Release assets belong on GitHub Releases, not in source control.
 
 Before publishing, run the checks above, scan source for secrets, inspect screenshots and dependency notices, verify the signed app and DMG, and smoke-test a first launch and short dictation. Publish the release notes and SHA-256 checksum with the DMG.
+
+## Portable CPU builds
+
+`.cargo/config.toml` passes `cmake/apple-silicon.cmake` to Whisper’s CMake build. It disables host-specific CPU instructions while retaining Metal and Accelerate, so an app built on a newer Mac can run on older Apple Silicon. It also avoids the upstream i8mm feature-probe failure on GitHub’s M1 runners.
+
+If you previously built this checkout before the configuration was added, clear Whisper’s cached native build once:
+
+```sh
+cargo clean --manifest-path src-tauri/Cargo.toml -p whisper-rs-sys
+```
+
+Then repeat the normal tests and build. A fresh clone needs no extra step.

@@ -1,0 +1,4 @@
+[env]
+# whisper-rs-sys 0.13 forwards CMAKE_* variables, but not GGML_* variables.
+# Apply the portable CPU configuration to both contributor and release builds.
+CMAKE_PROJECT_INCLUDE = { value = "cmake/apple-silicon.cmake", relative = true }
